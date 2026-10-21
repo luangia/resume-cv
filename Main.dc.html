@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lucas Pham — Resume</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<script src="./assets/534406fa85b7678022ff761cb488c7a4.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>
+body{margin:0;background:#F3F4F1}
+a{color:#2449B8;text-decoration:none}a:hover{color:#16307F;text-decoration:underline}
+</style>
+</helmet>
+<div style="font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif; color: #16181D; background: #F3F4F1; min-height: 100vh; font-size: 16px; line-height: 1.55">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 72px 0 40px; border-bottom: 1px solid #D5D8D1">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #565B63">Software Engineer · Portland, OR</div>
+<h1 style="margin: 0; font-size: 56px; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance">Luan “Lucas” Pham</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #33373E; max-width: 520px; text-wrap: pretty">Nearly three years building high-throughput backend systems at Qualtrics and Farlinium. M.S. in Computer Science from Portland State, with work in real-time graphics, AR and LLM agents.</p>
+<nav aria-label="Contact" style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 14px">
+<a href="mailto:luanphamgia@gmail.com">luanphamgia@gmail.com</a>
+<a href="https://linkedin.com/in/luanphamg">linkedin.com/in/luanphamg</a>
+<a href="tel:+14173700813">417.370.0813</a>
+</nav>
+</div>
+<figure style="flex: 1 1 380px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="position: relative; height: 400px; border: 1px solid #D5D8D1; border-radius: 4px; background: #EEF0EC; overflow: hidden">
+<canvas ref="{{ canvasRef }}" role="img" aria-label="Interactive 3D point cloud on a sphere. Drag to rotate, hover to deform the surface." style="display: block; width: 100%; height: 100%; cursor: grab; touch-action: none"></canvas>
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">
+<span>Drag to rotate · hover to probe</span>
+<span>three.js · custom GLSL · {{ pointLabel }} points</span>
+</figcaption>
+</figure>
+</header>
+
+<section aria-labelledby="exp" style="display: flex; flex-direction: column; gap: 32px; padding: 56px 0; border-bottom: 1px solid #D5D8D1">
+<h2 id="exp" style="margin: 0; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #565B63">01 — Experience</h2>
+
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">Dec 2023 – Jul 2024</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Software Engineer – Technical Consultant <span style="font-weight: 400; color: #565B63">· Farlinium, Remote</span></h3>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #33373E">
+<li>Led 15+ secure, reliable ETL and API integration implementations tailored to client needs.</li>
+<li>Subject Matter Expert for the Qualtrics data integration pipeline.</li>
+<li>Validated data supporting sentiment analysis of call center transcripts, improving accuracy and surfacing insights for client reporting.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">Aug 2021 – Oct 2023</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Software Engineer <span style="font-weight: 400; color: #565B63">· Qualtrics, Remote</span></h3>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #33373E">
+<li>Optimized a high-throughput file processing engine in Node.js and Go: 8% lower processing latency, scaled to 100+ enterprise workflows at 99.2% uptime.</li>
+<li>Built customizable voice-to-text solutions for external call centers, processing 10,000+ audio files a day (file decryption, audio stitching, metadata rollup).</li>
+<li>Ran production deployments across IBM Cloud and AWS (U.S. and E.U.) with Kubernetes, Docker and Splunk; monitored system health and resolved critical issues.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">Jan 2026 – Mar 2026</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Technical Course Support Specialist, Computer Graphics <span style="font-weight: 400; color: #565B63">· Portland State University</span></h3>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #33373E">
+<li>Validated OpenGL/C++ assignments before release; mentored 20+ students on rendering pipelines and matrix transformations.</li>
+</ul>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">Aug 2018 – May 2021</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">Teaching Assistant / Math-CS Tutor <span style="font-weight: 400; color: #565B63">· Drury University</span></h3>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: #33373E">
+<li>Tutored Data Structures, Algorithms and Discrete Math; graded assignments, led labs and helped debug student code.</li>
+</ul>
+</div>
+</article>
+</section>
+
+<section aria-labelledby="proj" style="display: flex; flex-direction: column; gap: 32px; padding: 56px 0; border-bottom: 1px solid #D5D8D1">
+<h2 id="proj" style="margin: 0; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #565B63">02 — Projects</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 32px 48px">
+<article style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 600">Agentic Threat Detection System</h3>
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">LangChain · Claude · RAG</div>
+<p style="margin: 0; color: #33373E; text-wrap: pretty">A ReAct loop over auth-log alerts that queries external threat-intel APIs and a RAG store of org context, then writes incident reports with MITRE ATT&amp;CK attribution and firewall remediation steps.</p>
+</article>
+<article style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 600">Multi-plane Image Viewer</h3>
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">Web · 3D</div>
+<p style="margin: 0; color: #33373E; text-wrap: pretty">A web tool for interactive exploration of multi-plane image scenes.</p>
+</article>
+<article style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 600">AR Book Identification</h3>
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">iOS · ARKit · Swift</div>
+<p style="margin: 0; color: #33373E; text-wrap: pretty">Recognizes books from camera input and overlays title, author and rating in AR.</p>
+</article>
+<article style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 600">Tone-to-Emoji Parser</h3>
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">JavaScript</div>
+<p style="margin: 0; color: #33373E; text-wrap: pretty">A parser that maps written tone indicators to matching emojis.</p>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="edu" style="display: flex; flex-direction: column; gap: 32px; padding: 56px 0; border-bottom: 1px solid #D5D8D1">
+<h2 id="edu" style="margin: 0; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #565B63">03 — Education</h2>
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">Sep 2024 – Mar 2026</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">M.S. in Computer Science</h3>
+<div style="color: #33373E">Portland State University · GPA 3.87</div>
+</div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<div style="flex: 0 0 200px; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #565B63; padding-top: 4px">May 2021</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.3">B.S. with Honors in Computer Science · B.A. with Honors in English</h3>
+<div style="color: #33373E">Drury University</div>
+</div>
+</article>
+</section>
+
+<section aria-labelledby="skills" style="display: flex; flex-direction: column; gap: 32px; padding: 56px 0">
+<h2 id="skills" style="margin: 0; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #565B63">04 — Skills</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 600">Languages</h3>
+<p style="margin: 0; color: #33373E">C/C++, Python, TypeScript/JavaScript, Go, Java, Swift, HTML/CSS</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 600">Graphics &amp; frameworks</h3>
+<p style="margin: 0; color: #33373E">OpenGL, three.js, ARKit, OpenCV, NumPy, Blender, React, Node.js</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 600">Infrastructure</h3>
+<p style="margin: 0; color: #33373E">AWS, Docker, Kubernetes, Jenkins, Splunk, MongoDB, Git, Xcode</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 600">AI</h3>
+<p style="margin: 0; color: #33373E">LLM agents, ReAct, LangChain, RAG, ChromaDB, MCP, prompt engineering</p>
+</div>
+</div>
+</section>
+
+<footer style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 24px 0 48px; border-top: 1px solid #D5D8D1; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #565B63">
+<span>Luan “Lucas” Pham</span>
+<a href="mailto:luanphamgia@gmail.com">luanphamgia@gmail.com</a>
+</footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2F5BD3","options":["#2F5BD3","#C2571A","#1F7A5C","#16181D"]},"points":{"editor":"range","default":2600,"min":600,"max":6000,"step":200},"autoSpin":{"editor":"boolean","default":true},"$preview":{"width":1280,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.canvasEl = null;
+    this.canvasRef = (el) => { this.canvasEl = el; };
+    this.gl = null;
+  }
+
+  renderVals() {
+    var n = this.props.points ?? 2600;
+    return { canvasRef: this.canvasRef, pointLabel: n.toLocaleString('en-US') };
+  }
+
+  componentDidMount() {
+    var self = this;
+    var tries = 0;
+    var start = function () {
+      if (window.THREE && self.canvasEl) { self.initScene(); return; }
+      if (tries++ < 60) self.retry = setTimeout(start, 100);
+    };
+    start();
+  }
+
+  componentDidUpdate(prev) {
+    if (!this.gl) return;
+    if ((prev.points ?? 2600) !== (this.props.points ?? 2600)) this.buildPoints();
+    if ((prev.accent ?? '#2F5BD3') !== (this.props.accent ?? '#2F5BD3')) {
+      this.gl.material.uniforms.uHot.value.set(this.props.accent ?? '#2F5BD3');
+      this.gl.lines.material.color.set(this.props.accent ?? '#2F5BD3');
+    }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.retry);
+    var g = this.gl;
+    if (!g) return;
+    cancelAnimationFrame(g.raf);
+    g.ro.disconnect();
+    g.off();
+    g.points.geometry.dispose();
+    g.material.dispose();
+    g.lines.geometry.dispose();
+    g.lines.material.dispose();
+    g.renderer.dispose();
+    this.gl = null;
+  }
+
+  // Evenly distributed points on a unit sphere (Fibonacci lattice).
+  fibonacciSphere(n) {
+    var THREE = window.THREE;
+    var pos = new Float32Array(n * 3);
+    var seed = new Float32Array(n);
+    var golden = Math.PI * (3 - Math.sqrt(5));
+    for (var i = 0; i < n; i++) {
+      var y = 1 - (i / (n - 1)) * 2;
+      var r = Math.sqrt(1 - y * y);
+      var th = golden * i;
+      pos[i * 3] = Math.cos(th) * r;
+      pos[i * 3 + 1] = y;
+      pos[i * 3 + 2] = Math.sin(th) * r;
+      seed[i] = Math.random();
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute('aSeed', new THREE.BufferAttribute(seed, 1));
+    return geo;
+  }
+
+  buildPoints() {
+    var g = this.gl;
+    var old = g.points.geometry;
+    g.points.geometry = this.fibonacciSphere(this.props.points ?? 2600);
+    old.dispose();
+  }
+
+  initScene() {
+    var THREE = window.THREE;
+    var canvas = this.canvasEl;
+    var self = this;
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    } catch (e) { return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(0x000000, 0);
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(35, 1, 0.1, 50);
+    camera.position.set(0, 0, 4.6);
+
+    var group = new THREE.Group();
+    group.rotation.set(0.35, -0.5, 0.1);
+    scene.add(group);
+
+    var accent = new THREE.Color(this.props.accent ?? '#2F5BD3');
+
+    var material = new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      uniforms: {
+        uTime: { value: 0 },
+        uHit: { value: new THREE.Vector3(0, 0, 1) },
+        uHitAmt: { value: 0 },
+        uSize: { value: 3.2 },
+        uPR: { value: renderer.getPixelRatio() },
+        uInk: { value: new THREE.Color('#1F2633') },
+        uHot: { value: accent.clone() }
+      },
+      vertexShader: [
+        'uniform float uTime; uniform vec3 uHit; uniform float uHitAmt;',
+        'uniform float uSize; uniform float uPR;',
+        'attribute float aSeed;',
+        'varying float vAlpha; varying float vHeat;',
+        'void main(){',
+        '  vec3 n = normalize(position);',
+        '  float t = uTime;',
+        '  float w = sin(3.1*n.x + t*0.55) * sin(2.7*n.y + t*0.72) * sin(3.4*n.z + t*0.46);',
+        '  float d = distance(n, uHit);',
+        '  float h = uHitAmt * exp(-d*d*9.0);',
+        '  vec3 p = n * (1.0 + 0.075*w + 0.22*h);',
+        '  vec4 mv = modelViewMatrix * vec4(p, 1.0);',
+        '  vec3 nv = normalize(normalMatrix * n);',
+        '  float facing = dot(nv, normalize(-mv.xyz));',
+        '  float rim = 1.0 - abs(facing);',
+        '  vAlpha = (facing > 0.0 ? 0.55 + 0.45*rim : 0.12 + 0.1*rim) * (0.75 + 0.25*aSeed);',
+        '  vHeat = clamp(h*1.4 + max(w, 0.0)*0.25, 0.0, 1.0);',
+        '  gl_PointSize = uSize * uPR * (0.8 + 0.4*aSeed + 1.2*h) * (4.0 / -mv.z);',
+        '  gl_Position = projectionMatrix * mv;',
+        '}'
+      ].join('\n'),
+      fragmentShader: [
+        'uniform vec3 uInk; uniform vec3 uHot;',
+        'varying float vAlpha; varying float vHeat;',
+        'void main(){',
+        '  vec2 c = gl_PointCoord - 0.5;',
+        '  float r2 = dot(c, c);',
+        '  if (r2 > 0.25) discard;',
+        '  float edge = smoothstep(0.25, 0.16, r2);',
+        '  gl_FragColor = vec4(mix(uInk, uHot, vHeat), vAlpha * edge);',
+        '}'
+      ].join('\n')
+    });
+
+    var points = new THREE.Points(this.fibonacciSphere(this.props.points ?? 2600), material);
+    group.add(points);
+
+    var ico = new THREE.IcosahedronGeometry(0.58, 1);
+    var lines = new THREE.LineSegments(
+      new THREE.EdgesGeometry(ico),
+      new THREE.LineBasicMaterial({ color: accent.clone(), transparent: true, opacity: 0.35 })
+    );
+    ico.dispose();
+    group.add(lines);
+
+    // Interaction: drag to rotate with inertia, hover raycasts the sphere.
+    var raycaster = new THREE.Raycaster();
+    var ndc = new THREE.Vector2();
+    var sphere = new THREE.Sphere(new THREE.Vector3(), 1.0);
+    var hitWorld = new THREE.Vector3();
+    var hitTarget = new THREE.Vector3(0, 0, 1);
+    var hovering = false, dragging = false;
+    var lastX = 0, lastY = 0, vx = 0, vy = 0;
+    var axisX = new THREE.Vector3(1, 0, 0), axisY = new THREE.Vector3(0, 1, 0);
+    var qTmp = new THREE.Quaternion();
+
+    var updatePointer = function (e) {
+      var rect = canvas.getBoundingClientRect();
+      ndc.set(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
+      raycaster.setFromCamera(ndc, camera);
+      if (raycaster.ray.intersectSphere(sphere, hitWorld)) {
+        hitTarget.copy(group.worldToLocal(hitWorld.clone())).normalize();
+        hovering = true;
+      } else {
+        hovering = false;
+      }
+    };
+    var onDown = function (e) {
+      dragging = true; lastX = e.clientX; lastY = e.clientY;
+      canvas.style.cursor = 'grabbing';
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    };
+    var onMove = function (e) {
+      if (dragging) {
+        vx = (e.clientX - lastX) * 0.005;
+        vy = (e.clientY - lastY) * 0.005;
+        lastX = e.clientX; lastY = e.clientY;
+      }
+      updatePointer(e);
+    };
+    var onUp = function () { dragging = false; canvas.style.cursor = 'grab'; };
+    var onLeave = function () { hovering = false; if (!dragging) canvas.style.cursor = 'grab'; };
+    canvas.addEventListener('pointerdown', onDown);
+    canvas.addEventListener('pointermove', onMove);
+    canvas.addEventListener('pointerup', onUp);
+    canvas.addEventListener('pointercancel', onUp);
+    canvas.addEventListener('pointerleave', onLeave);
+
+    var resize = function () {
+      var w = canvas.clientWidth, h = canvas.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.fov = w / h < 1 ? 45 : 35;
+      camera.updateProjectionMatrix();
+    };
+    var ro = new ResizeObserver(resize);
+    ro.observe(canvas);
+    resize();
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var clock = new THREE.Clock();
+    var visible = true;
+    var io = new IntersectionObserver(function (es) { visible = es[0].isIntersecting; });
+    io.observe(canvas);
+
+    var tick = function () {
+      self.gl.raf = requestAnimationFrame(tick);
+      var dt = Math.min(clock.getDelta(), 0.05);
+      if (!visible) return;
+      var u = material.uniforms;
+      if (!reduce) u.uTime.value += dt;
+
+      var spin = (self.props.autoSpin ?? true) && !reduce && !dragging;
+      if (!dragging) { vx *= 0.94; vy *= 0.94; }
+      var yaw = vx + (spin ? dt * 0.12 : 0);
+      if (yaw) group.quaternion.premultiply(qTmp.setFromAxisAngle(axisY, yaw));
+      if (vy) group.quaternion.premultiply(qTmp.setFromAxisAngle(axisX, vy));
+      if (dragging) { vx *= 0.5; vy *= 0.5; }
+
+      u.uHit.value.lerp(hitTarget, 0.18).normalize();
+      u.uHitAmt.value += ((hovering ? 1 : 0) - u.uHitAmt.value) * 0.08;
+      lines.rotation.y -= reduce ? 0 : dt * 0.25;
+
+      renderer.render(scene, camera);
+    };
+
+    this.gl = {
+      renderer: renderer, material: material, points: points, lines: lines, ro: ro, raf: 0,
+      off: function () {
+        io.disconnect();
+        canvas.removeEventListener('pointerdown', onDown);
+        canvas.removeEventListener('pointermove', onMove);
+        canvas.removeEventListener('pointerup', onUp);
+        canvas.removeEventListener('pointercancel', onUp);
+        canvas.removeEventListener('pointerleave', onLeave);
+      }
+    };
+    tick();
+  }
+}
+</script>
+</body>
+</html>

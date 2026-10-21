@@ -765,17 +765,230 @@
         var points = new THREE.Points(fibonacciSphere(POINTS), material);
         group.add(points);
 
-        var ico = new THREE.IcosahedronGeometry(0.58, 1);
-        var lines = new THREE.LineSegments(
-          new THREE.EdgesGeometry(ico),
-          new THREE.LineBasicMaterial({
-            color: new THREE.Color(ACCENT),
-            transparent: true,
-            opacity: 0.35,
-          }),
-        );
-        ico.dispose();
-        group.add(lines);
+        // Open book (text on the left page, circuit traces on the right) with a
+        // microchip floating above the spine, drawn as accent-colored line segments.
+        function buildEmblem(THREE, color) {
+          var W = 0.4,
+            D = 0.28;
+          var bold = [],
+            fine = [],
+            chipPts = [];
+          function pageY(u) {
+            return 0.12 * (1 - (1 - u) * (1 - u));
+          }
+          function P(side, u, v, lift) {
+            return [side * u * W, pageY(u) + (lift || 0), v * D];
+          }
+          function seg(arr, a, b) {
+            arr.push(a[0], a[1], a[2], b[0], b[1], b[2]);
+          }
+          function path(arr, side, pts, lift) {
+            for (var i = 0; i < pts.length - 1; i++) {
+              var a = pts[i],
+                b = pts[i + 1];
+              for (var s = 0; s < 8; s++) {
+                var t0 = s / 8,
+                  t1 = (s + 1) / 8;
+                seg(
+                  arr,
+                  P(
+                    side,
+                    a[0] + (b[0] - a[0]) * t0,
+                    a[1] + (b[1] - a[1]) * t0,
+                    lift,
+                  ),
+                  P(
+                    side,
+                    a[0] + (b[0] - a[0]) * t1,
+                    a[1] + (b[1] - a[1]) * t1,
+                    lift,
+                  ),
+                );
+              }
+            }
+          }
+          function pad(arr, side, u, v) {
+            var du = 0.025,
+              dv = 0.035,
+              l = 0.004;
+            path(
+              arr,
+              side,
+              [
+                [u - du, v - dv],
+                [u + du, v - dv],
+                [u + du, v + dv],
+                [u - du, v + dv],
+                [u - du, v - dv],
+              ],
+              l,
+            );
+          }
+
+          // Pages: the top sheet plus a few sheets below it to show the page stack.
+          [-1, 1].forEach(function (side) {
+            for (var k = 0; k < 4; k++) {
+              var arr = k === 0 ? bold : fine,
+                lift = -0.014 * k;
+              path(
+                arr,
+                side,
+                [
+                  [0, -1],
+                  [1, -1],
+                ],
+                lift,
+              );
+              path(
+                arr,
+                side,
+                [
+                  [0, 1],
+                  [1, 1],
+                ],
+                lift,
+              );
+              path(
+                arr,
+                side,
+                [
+                  [1, -1],
+                  [1, 1],
+                ],
+                lift,
+              );
+            }
+          });
+          seg(bold, [0, 0, -D], [0, 0, D]); // spine
+
+          // Hard cover underneath.
+          var cx = W + 0.03,
+            cy = -0.06,
+            cz = D + 0.03;
+          seg(bold, [-cx, cy, -cz], [cx, cy, -cz]);
+          seg(bold, [cx, cy, -cz], [cx, cy, cz]);
+          seg(bold, [cx, cy, cz], [-cx, cy, cz]);
+          seg(bold, [-cx, cy, cz], [-cx, cy, -cz]);
+          seg(fine, [0, cy, -cz], [0, 0, -D]);
+          seg(fine, [0, cy, cz], [0, 0, D]);
+
+          // Left page: lines of text.
+          var ends = [0.88, 0.8, 0.86, 0.62, 0.84, 0.78, 0.5];
+          for (var r = 0; r < ends.length; r++) {
+            var v = -0.72 + r * 0.24;
+            path(
+              fine,
+              -1,
+              [
+                [0.12, v],
+                [ends[r], v],
+              ],
+              0.004,
+            );
+          }
+
+          // Right page: circuit traces ending in pads.
+          var traces = [
+            [
+              [0.12, -0.62],
+              [0.42, -0.62],
+              [0.56, -0.36],
+              [0.86, -0.36],
+            ],
+            [
+              [0.12, -0.14],
+              [0.34, -0.14],
+              [0.48, 0.08],
+              [0.86, 0.08],
+            ],
+            [
+              [0.12, 0.34],
+              [0.52, 0.34],
+              [0.66, 0.6],
+              [0.86, 0.6],
+            ],
+            [
+              [0.3, -0.86],
+              [0.3, -0.62],
+            ],
+          ];
+          traces.forEach(function (tr) {
+            path(fine, 1, tr, 0.004);
+            var e = tr[tr.length - 1];
+            pad(fine, 1, e[0], e[1]);
+          });
+
+          // Microchip: body, die and pins.
+          var h = 0.08,
+            d = 0.045,
+            pinLen = 0.035;
+          [
+            [h, 0],
+            [d, 0],
+          ].forEach(function (q) {
+            var a = q[0];
+            seg(chipPts, [-a, 0, -a], [a, 0, -a]);
+            seg(chipPts, [a, 0, -a], [a, 0, a]);
+            seg(chipPts, [a, 0, a], [-a, 0, a]);
+            seg(chipPts, [-a, 0, a], [-a, 0, -a]);
+          });
+          [-0.045, 0, 0.045].forEach(function (o) {
+            seg(chipPts, [o, 0, -h], [o, 0, -h - pinLen]);
+            seg(chipPts, [o, 0, h], [o, 0, h + pinLen]);
+            seg(chipPts, [-h, 0, o], [-h - pinLen, 0, o]);
+            seg(chipPts, [h, 0, o], [h + pinLen, 0, o]);
+          });
+
+          function lineObj(arr, opacity) {
+            var g = new THREE.BufferGeometry();
+            g.setAttribute(
+              "position",
+              new THREE.Float32BufferAttribute(arr, 3),
+            );
+            return new THREE.LineSegments(
+              g,
+              new THREE.LineBasicMaterial({
+                color: new THREE.Color(color),
+                transparent: true,
+                opacity: opacity,
+              }),
+            );
+          }
+          var root = new THREE.Group();
+          var book = new THREE.Group();
+          book.add(lineObj(bold, 0.7), lineObj(fine, 0.42));
+          book.position.y = -0.12;
+          var chip = lineObj(chipPts, 0.75);
+          chip.position.y = 0.3;
+          chip.scale.setScalar(1.5);
+          root.add(book, chip);
+          root.rotation.x = 0.5; // tip the book toward the camera so its pages read
+          root.scale.setScalar(1.3);
+
+          return {
+            object: root,
+            update: function (t) {
+              chip.position.y = 0.3 + 0.025 * Math.sin(t * 1.3);
+              chip.rotation.y = t * 0.35;
+            },
+            setColor: function (c) {
+              root.traverse(function (o) {
+                if (o.material) o.material.color.set(c);
+              });
+            },
+            dispose: function () {
+              root.traverse(function (o) {
+                if (o.geometry) {
+                  o.geometry.dispose();
+                  o.material.dispose();
+                }
+              });
+            },
+          };
+        }
+
+        var emblem = buildEmblem(THREE, ACCENT);
+        group.add(emblem.object);
 
         // ---- Interaction: drag to rotate, hover raycasts the sphere -------------
         var raycaster = new THREE.Raycaster();
@@ -887,7 +1100,7 @@
           u.uHitAmt.value +=
             ((hovering ? 1 : 0) - u.uHitAmt.value) *
             (1 - Math.pow(1 - 0.08, f));
-          if (!reduce) lines.rotation.y -= dt * 0.25;
+          emblem.update(u.uTime.value);
 
           renderer.render(scene, camera);
         }
